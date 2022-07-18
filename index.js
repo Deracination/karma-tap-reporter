@@ -43,7 +43,7 @@ var TAPReporter = function(baseReporterDecorator, config, logger, helper) {
   };
 
   this.specSkipped = function(browser, result) {
-    write("ok " + ++numbers[browser.id] + " " + "# skip " + result.suite.join(' ').replace(/\./g, '_') + " " + result.description + EOL);
+	throw new Error(`SKIPPED ${result.description} : remove fit/fdescribe!!`);
   };
 
   this.onRunComplete = function(browsers, results) {
